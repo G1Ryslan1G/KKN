@@ -24,7 +24,6 @@
                     </ListView>
                     <Button x:Name="ClohtAddBTN" Content="Добавить" HorizontalAlignment="Left" Margin="14,347,0,0" VerticalAlignment="Top" Width="111" Click="ClohtAddBTN_Click" Height="36"/>
                     <Button x:Name="ClohtEditBTN" Content="Редактировать" HorizontalAlignment="Left" Margin="141,347,0,0" VerticalAlignment="Top" Width="173" Click="ClohtEditBTN_Click" Height="36"/>
-                    <Button x:Name="ClohtDelBTN" Content="Удалить" HorizontalAlignment="Left" Margin="333,347,0,0" VerticalAlignment="Top" Width="99" Click="ClohtDelBTN_Click" Height="36"/>
                     <TextBox x:Name="ClohtSearchBOX" HorizontalAlignment="Left" Height="27" Margin="106,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" TextChanged="ClohtSearchBOX_TextChanged"/>
                     <Label Content="Ф.И.О." HorizontalAlignment="Left" Margin="14,6,0,0" VerticalAlignment="Top" Height="32" Width="64"/>
                 </Grid>
@@ -43,7 +42,6 @@
                     </ListView>
                     <Button x:Name="FurnituresAddBTN" Content="Добавить" HorizontalAlignment="Left" Margin="14,347,0,0" VerticalAlignment="Top" Width="111" Click="FurnituresAddBTN_Click" Height="36"/>
                     <Button x:Name="FurnituresEditBTN" Content="Редактировать" HorizontalAlignment="Left" Margin="141,347,0,0" VerticalAlignment="Top" Width="173" Click="FurnituresEditBTN_Click" Height="36"/>
-                    <Button x:Name="FurnituresDelBTN" Content="Удалить" HorizontalAlignment="Left" Margin="333,347,0,0" VerticalAlignment="Top" Width="99" Click="FurnituresDelBTN_Click" Height="36"/>
                     <TextBox x:Name="FurnituresSearchBOX" HorizontalAlignment="Left" Height="27" Margin="106,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" TextChanged="FurnituresSearchBOX_TextChanged"/>
                     <Label Content="Ф.И.О." HorizontalAlignment="Left" Margin="14,6,0,0" VerticalAlignment="Top" Height="32" Width="64"/>
                 </Grid>

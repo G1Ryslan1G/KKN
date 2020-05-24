@@ -97,6 +97,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddClohtPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddFurniturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddShipmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +168,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Navigation.cs" />
+    <Compile Include="Pages\AddClohtPage.xaml.cs">
+      <DependentUpon>AddClohtPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddFurniturePage.xaml.cs">
+      <DependentUpon>AddFurniturePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddShipmentPage.xaml.cs">
       <DependentUpon>AddShipmentPage.xaml</DependentUpon>
     </Compile>
