@@ -12,10 +12,10 @@
         <ListView x:Name="WaterhosesLV" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="767" Margin="10,10,0,0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Шеф" DisplayMemberBinding="{Binding User.Name}"/>
                     <GridViewColumn Header="Город" DisplayMemberBinding="{Binding City.Name}"/>
-                    <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Role.Name}"/>
-                    <GridViewColumn Header="Активность" DisplayMemberBinding="{Binding IsVisibal}"/>
+                    <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Phone}"/>
+                    <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
         </ListView>
