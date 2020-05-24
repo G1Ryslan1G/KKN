@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using KKHProject.DataBase;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace KKHProject.Pages
@@ -8,14 +9,17 @@ namespace KKHProject.Pages
     /// </summary>
     public partial class DirectorMain : Page
     {
-        public DirectorMain()
+        private readonly User user;
+
+        public DirectorMain(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void WaterBt_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new WarehousesPage());
+            Navigation.NextPage(new WarehousesPage(user));
         }
 
         private void UsersBt_Click(object sender, RoutedEventArgs e)

@@ -30,7 +30,7 @@ namespace KKHProject
                 }
                 if (user.RoleId == 2)
                 {
-                    Navigation.NextPage(new DirectorMain());
+                    Navigation.NextPage(new DirectorMain(user));
                     return;
                 }
                 if (user.RoleId == 3)
