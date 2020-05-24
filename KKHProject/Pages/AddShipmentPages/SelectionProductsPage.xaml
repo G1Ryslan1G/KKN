@@ -1,0 +1,49 @@
+﻿<Page x:Class="KKHProject.Pages.AddShipmentPages.SelectionProductsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KKHProject.Pages.AddShipmentPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="380" d:DesignWidth="780"
+      Title="SelectionProductsPage" FontSize="20">
+
+    <Grid>
+        <ListView x:Name="ClohtsLV" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="320" Margin="10,22,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Объём рулона" DisplayMemberBinding="{Binding Volume}"/>
+                    <GridViewColumn Header="Длина" DisplayMemberBinding="{Binding Length}"/>
+                    <GridViewColumn Header="Ширина" DisplayMemberBinding="{Binding Width}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="FutureLV" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="320" Margin="10,214,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Descriptions}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <Button x:Name="CancleBtn" Content="Назад" HorizontalAlignment="Left" Height="33" Margin="471,337,0,0" VerticalAlignment="Top" Width="134" Click="CancleBtn_Click"/>
+        <Button x:Name="NextBtn" Content="Далее" HorizontalAlignment="Left" Height="33" Margin="627,337,0,0" VerticalAlignment="Top" Width="134" Click="NextBtn_Click"/>
+        <ListView x:Name="ObjectsLV" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="290" Margin="471,22,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Object.Name}"/>
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Count}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="AddCloht" Content="Добавить" FontSize="16" HorizontalAlignment="Left" Height="40" Margin="364,123,0,0" VerticalAlignment="Top" Width="81" Click="AddCloht_Click"/>
+        <TextBox x:Name="countCloht" HorizontalAlignment="Left" Height="30" Margin="364,76,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="81"/>
+        <Button x:Name="AddFuture" Content="Добавить" FontSize="16" HorizontalAlignment="Left" Height="40" Margin="364,289,0,0" VerticalAlignment="Top" Width="81" Click="AddFuture_Click"/>
+        <TextBox x:Name="countFuture" HorizontalAlignment="Left" Height="30" Margin="364,242,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="81"/>
+        <Button x:Name="DeleteBtn" Content="Удалить" HorizontalAlignment="Left" Height="33" Margin="471,287,0,0" VerticalAlignment="Top" Width="290" Click="DeleteBtn_Click"/>
+
+    </Grid>
+</Page>
