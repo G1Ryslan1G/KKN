@@ -2,10 +2,10 @@ namespace KKHProject.DataBase
 {
     using System.Data.Entity;
 
-    public partial class KKHDB : DbContext
+    public partial class KKNDB : DbContext
     {
-        public KKHDB()
-            : base("name=KKHDB")
+        public KKNDB()
+            : base("name=KKNDB")
         {
         }
 
@@ -133,6 +133,12 @@ namespace KKHProject.DataBase
                 .HasMany(e => e.Providers)
                 .WithRequired(e => e.User)
                 .HasForeignKey(e => e.id_user)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Warehouses)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.id_chief)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Warehouse>()

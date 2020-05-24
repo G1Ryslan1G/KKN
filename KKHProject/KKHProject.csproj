@@ -83,7 +83,7 @@
     <Compile Include="DataBase\Cloht.cs" />
     <Compile Include="DataBase\Container.cs" />
     <Compile Include="DataBase\Furniture.cs" />
-    <Compile Include="DataBase\KKHDB.cs" />
+    <Compile Include="DataBase\KKNDB.cs" />
     <Compile Include="DataBase\ObjectsContainer.cs" />
     <Compile Include="DataBase\Provider.cs" />
     <Compile Include="DataBase\Role.cs" />
@@ -118,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AddUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddWarehousesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,6 +177,9 @@
     </Compile>
     <Compile Include="Pages\AddUserPage.xaml.cs">
       <DependentUpon>AddUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddWarehousesPage.xaml.cs">
+      <DependentUpon>AddWarehousesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminMain.xaml.cs">
       <DependentUpon>AdminMain.xaml</DependentUpon>

@@ -28,6 +28,8 @@ namespace KKHProject.DataBase
         [Required]
         public string Description { get; set; }
 
+        public bool VisibleStatus { get; set; }
+
         public virtual City City { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -35,5 +37,7 @@ namespace KKHProject.DataBase
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Shipment> Shipments { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace KKHProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static KKHDB KKHDB = new KKHDB();
+        public static KKNDB KKHDB = new KKNDB();
 
         public MainWindow()
         {
