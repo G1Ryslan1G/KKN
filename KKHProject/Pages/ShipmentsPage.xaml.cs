@@ -12,8 +12,9 @@ namespace KKHProject.Pages
     public partial class ShipmentsPage : Page
     {
         private readonly Provider provider;
+        private User user;
 
-        public ShipmentsPage(Provider provider = null)
+        public ShipmentsPage(User user, Provider provider = null)
         {
             InitializeComponent();
             StatusCB.ItemsSource = MainWindow.KKHDB.Status.ToList();
@@ -47,7 +48,7 @@ namespace KKHProject.Pages
 
         private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new AddShipmentPage());
+            Navigation.NextPage(new AddShipmentPage(user, provider));
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
@@ -58,18 +59,16 @@ namespace KKHProject.Pages
             }
             else
             {
-                Navigation.NextPage(new AddShipmentPage(ShipmentsLV.SelectedItem as Shipment));
+                Navigation.NextPage(new AddShipmentPage(user, provider, ShipmentsLV.SelectedItem as Shipment));
             }
         }
 
-        private void ExecutedBTN_Click(object sender, RoutedEventArgs e)
+        private async void ExecutedBTN_Click(object sender, RoutedEventArgs e)
         {
             var sel = ShipmentsLV.SelectedItem as Shipment;
             var shipments = MainWindow.KKHDB.Shipments.FirstOrDefault(s => s.Id == sel.Id);
             shipments.id_status = 2;
             MainWindow.KKHDB.SaveChanges();
-
-            Task.Delay(10); 
 
             Update();
         }

@@ -35,7 +35,7 @@ namespace KKHProject
                 }
                 if (user.RoleId == 3)
                 {
-                    Navigation.NextPage(new StorekeeperMain());
+                    Navigation.NextPage(new StorekeeperMain(user));
                     return;
                 }
                 if (user.RoleId == 4)

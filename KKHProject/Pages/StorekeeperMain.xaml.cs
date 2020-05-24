@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using KKHProject.DataBase;
+using System.Windows.Controls;
 
 namespace KKHProject.Pages
 {
@@ -7,19 +8,22 @@ namespace KKHProject.Pages
     /// </summary>
     public partial class StorekeeperMain : Page
     {
-        public StorekeeperMain()
+        private readonly User user;
+
+        public StorekeeperMain(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void RawBt_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            Navigation.NextPage(new RawsPage());
         }
 
         private void WaterBt_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            Navigation.NextPage(new WarehousesPage(user));
         }
     }
 }

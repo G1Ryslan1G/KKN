@@ -15,14 +15,17 @@ namespace KKHProject.Pages.AddShipmentPages
         private Frame frame;
         private List<ShipmentObject> objects;
         private Shipment shipment;
+        private readonly User user;
+        private readonly Provider provider;
 
-        public FinalPage(Frame frame, List<ShipmentObject> objects, Shipment shipment)
+        public FinalPage(Frame frame, List<ShipmentObject> objects, Shipment shipment, User user, Provider provider = null)
         {
             InitializeComponent();
             this.frame = frame;
             this.objects = objects;
             this.shipment = shipment;
-
+            this.user = user;
+            this.provider = provider;
             DestriptionTxt.Text = shipment.Descriptions;
             CountSum.Text = shipment.CostSupply.ToString();
         }
@@ -62,9 +65,10 @@ namespace KKHProject.Pages.AddShipmentPages
                 MainWindow.KKHDB.SaveChanges();
             }
             MessageBox.Show("Готово!");
-            Navigation.BackPage();
-            Navigation.BackPage();
-            Navigation.BackPage();
+            if (provider == null)
+                Navigation.NextPage(new DirectorMain(user));
+            else
+                Navigation.NextPage(new ProviderMain(provider));
         }
 
         private void CancleBtn_Click(object sender, RoutedEventArgs e)

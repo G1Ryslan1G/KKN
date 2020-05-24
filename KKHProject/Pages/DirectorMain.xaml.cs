@@ -29,7 +29,7 @@ namespace KKHProject.Pages
 
         private void PostvBt_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new ShipmentsPage());
+            Navigation.NextPage(new ShipmentsPage(user));
         }
     }
 }

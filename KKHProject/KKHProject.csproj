@@ -149,10 +149,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WarehousePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\WarehousesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,9 +194,6 @@
     </Compile>
     <Compile Include="Pages\StorekeeperMain.xaml.cs">
       <DependentUpon>StorekeeperMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\WarehousePage.xaml.cs">
-      <DependentUpon>WarehousePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\WarehousesPage.xaml.cs">
       <DependentUpon>WarehousesPage.xaml</DependentUpon>

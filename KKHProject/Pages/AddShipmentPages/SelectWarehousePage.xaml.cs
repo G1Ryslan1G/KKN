@@ -14,15 +14,18 @@ namespace KKHProject.Pages.AddShipmentPages
         private Frame frame;
         private List<ShipmentObject> objects;
         private Shipment shipment;
+        private User user;
+        private Provider provider;
 
-        public SelectWarehousePage(Frame frame, List<ShipmentObject> objects, Shipment shipment)
+        public SelectWarehousePage(Frame frame, List<ShipmentObject> objects, Shipment shipment, User user, Provider provider = null)
         {
             InitializeComponent();
 
             this.frame = frame;
             this.objects = objects;
             this.shipment = shipment;
-
+            this.user = user;
+            this.provider = provider;
             WarehouseLV.ItemsSource = MainWindow.KKHDB.Warehouses.ToList();
             if (shipment.Warehouse != null)
                 WarehouseLV.SelectedItem = shipment.Warehouse;
@@ -36,7 +39,7 @@ namespace KKHProject.Pages.AddShipmentPages
         private void NextBtn_Click(object sender, RoutedEventArgs e)
         {
             shipment.id_warehouse = (WarehouseLV.SelectedItem as Warehouse).Id;
-            frame.Navigate(new FinalPage(frame,objects,shipment));
+            frame.Navigate(new FinalPage(frame,objects,shipment,user,provider));
         }
     }
 }

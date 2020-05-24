@@ -1,4 +1,5 @@
 ﻿using KKHProject.DataBase;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace KKHProject.Pages
@@ -18,7 +19,8 @@ namespace KKHProject.Pages
 
         private void ShipmentsBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Navigation.NextPage(new ShipmentsPage(provider));
+            var user = MainWindow.KKHDB.Users.FirstOrDefault(u=>u.Id == provider.id_user);
+            Navigation.NextPage(new ShipmentsPage(user, provider));
         }
     }
 }

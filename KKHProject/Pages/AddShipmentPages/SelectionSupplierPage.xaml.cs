@@ -12,8 +12,10 @@ namespace KKHProject.Pages.AddShipmentPages
     public partial class SelectionSupplierPage : Page
     {
         private readonly List<ShipmentObject> objects;
+        private readonly User user;
+        private readonly Provider provider;
 
-        public SelectionSupplierPage(Frame frame, List<ShipmentObject> objects, Shipment shipment = null)
+        public SelectionSupplierPage(Frame frame, List<ShipmentObject> objects, User user, Provider provider = null, Shipment shipment = null)
         {
             InitializeComponent();
             ProvidersLV.ItemsSource = MainWindow.KKHDB.Providers.ToList();
@@ -23,6 +25,8 @@ namespace KKHProject.Pages.AddShipmentPages
             }
             Frame = frame;
             this.objects = objects;
+            this.user = user;
+            this.provider = provider;
             Shipment = shipment;
         }
 
@@ -42,7 +46,7 @@ namespace KKHProject.Pages.AddShipmentPages
             }
             Shipment.id_provider = (ProvidersLV.SelectedItem as Provider).Id;
                     
-            Frame.Navigate(new SelectionProductsPage(Frame, objects, Shipment));
+            Frame.Navigate(new SelectionProductsPage(Frame, objects, Shipment, user, provider));
         }
     }
 }

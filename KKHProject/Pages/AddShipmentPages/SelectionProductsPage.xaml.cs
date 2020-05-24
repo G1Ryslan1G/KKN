@@ -15,8 +15,10 @@ namespace KKHProject.Pages.AddShipmentPages
         private Frame frame;
         private List<ShipmentObject> objects;
         private Shipment shipment;
+        private User user;
+        private Provider provider;
 
-        public SelectionProductsPage(Frame frame, List<ShipmentObject> objects, Shipment shipment)
+        public SelectionProductsPage(Frame frame, List<ShipmentObject> objects, Shipment shipment, User user, Provider provider = null)
         {
             InitializeComponent();
             this.frame = frame;
@@ -68,7 +70,7 @@ namespace KKHProject.Pages.AddShipmentPages
 
         private void NextBtn_Click(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new SelectWarehousePage(frame, objects, shipment));
+            frame.Navigate(new SelectWarehousePage(frame, objects, shipment, user, provider));
         }
 
         private void CancleBtn_Click(object sender, RoutedEventArgs e)
