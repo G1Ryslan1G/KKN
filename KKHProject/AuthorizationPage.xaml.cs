@@ -23,28 +23,31 @@ namespace KKHProject
             var user = MainWindow.KKHDB.Users.FirstOrDefault(u => u.Login == login && u.Password == password);
             if (user != null)
             {
-                if (user.RoleId == 1)
+                if (user.IsVisibal)
                 {
-                    Navigation.NextPage(new AdminMain());
-                    return;
+                    if (user.RoleId == 1)
+                    {
+                        Navigation.NextPage(new AdminMain());
+                        return;
+                    }
+                    if (user.RoleId == 2)
+                    {
+                        Navigation.NextPage(new DirectorMain(user));
+                        return;
+                    }
+                    if (user.RoleId == 3)
+                    {
+                        Navigation.NextPage(new StorekeeperMain(user));
+                        return;
+                    }
+                    if (user.RoleId == 4)
+                    {
+                        var provider = MainWindow.KKHDB.Providers.First(u => u.id_user == user.Id);
+                        Navigation.NextPage(new ProviderMain(user));
+                        return;
+                    }
                 }
-                if (user.RoleId == 2)
-                {
-                    Navigation.NextPage(new DirectorMain(user));
-                    return;
-                }
-                if (user.RoleId == 3)
-                {
-                    Navigation.NextPage(new StorekeeperMain(user));
-                    return;
-                }
-                if (user.RoleId == 4)
-                {
-                    var provider = MainWindow.KKHDB.Providers.First(u => u.id_user == user.Id);
-                    Navigation.NextPage(new ProviderMain(provider));
-                    return;
-                }
-                    MessageBox.Show("Произошла ошибка в авторизации!", "Ошибка!", MessageBoxButton.OK);
+                MessageBox.Show("Произошла ошибка в авторизации!", "Ошибка!", MessageBoxButton.OK);
             }
             else
             {

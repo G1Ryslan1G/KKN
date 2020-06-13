@@ -9,18 +9,17 @@ namespace KKHProject.Pages
     /// </summary>
     public partial class ProviderMain : Page
     {
-        private Provider provider;
+        private User user;
 
-        public ProviderMain(Provider provider)
+        public ProviderMain(User user)
         {
             InitializeComponent();
-            this.provider = provider;
+            this.user = user;
         }
 
         private void ShipmentsBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            var user = MainWindow.KKHDB.Users.FirstOrDefault(u=>u.Id == provider.id_user);
-            Navigation.NextPage(new ShipmentsPage(user, provider));
+            Navigation.NextPage(new ShipmentsPage(user));
         }
     }
 }

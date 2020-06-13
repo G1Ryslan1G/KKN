@@ -18,6 +18,7 @@ namespace KKHProject.Pages
             lv.Insert(0, new City { Id = 0, Name = "Все" });
             CityCB.ItemsSource = lv;
             CityCB.DisplayMemberPath = "Name";
+            CityCB.SelectedIndex = 0;
         }
 
         private void SearchBOX_TextChanged(object sender, TextChangedEventArgs e) => Update();
@@ -25,7 +26,7 @@ namespace KKHProject.Pages
 
         private void CityCB_SelectionChanged(object sender, SelectionChangedEventArgs e) => Update();
 
-        private void Update()
+        public void Update()
         {
             var sel = CityCB.SelectedItem as City;
             UsersLV.ItemsSource = MainWindow.KKHDB.Users.Where(u => u.Name.Contains(SearchBOX.Text.Trim()) || SearchBOX.Text.Trim() == "")
@@ -35,7 +36,7 @@ namespace KKHProject.Pages
         private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
 
-            Navigation.NextPage(new AddUserPage());
+            Navigation.NextPage(new AddUserPage(this));
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
@@ -46,7 +47,7 @@ namespace KKHProject.Pages
             }
             else
             {
-                Navigation.NextPage(new AddUserPage(UsersLV.SelectedItem as User));
+                Navigation.NextPage(new AddUserPage(this, UsersLV.SelectedItem as User));
             }
         }
 
@@ -59,17 +60,18 @@ namespace KKHProject.Pages
             else
             {
                 var user = UsersLV.SelectedItem as User;
-                MessageBoxResult MBRes = MessageBox.Show("Вы уверены, что хотите удалить запись о комплексе?", "Удаление", MessageBoxButton.YesNo);
+                MessageBoxResult MBRes = MessageBox.Show("Вы уверены, что хотите заблокировать пользователя?", "Удаление", MessageBoxButton.YesNo);
                 switch (MBRes)
                 {
                     case MessageBoxResult.Yes:
                         user.IsVisibal = false;
                         MainWindow.KKHDB.SaveChanges();
-                        MessageBox.Show("Удалено!");
+                        MessageBox.Show("Заблокирован!");
                         break;
                     case MessageBoxResult.No:
                         break;
                 }
+                Update();
             }
         }
     }

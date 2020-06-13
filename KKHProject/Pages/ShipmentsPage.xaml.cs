@@ -10,14 +10,21 @@ namespace KKHProject.Pages
     /// </summary>
     public partial class ShipmentsPage : Page
     {
-        private readonly Provider provider;
         private User user;
+        private Provider provider;
 
-        public ShipmentsPage(User user, Provider provider = null)
+        public ShipmentsPage(User user)
         {
             InitializeComponent();
-            StatusCB.ItemsSource = MainWindow.KKHDB.Status.ToList();
+            var lv = MainWindow.KKHDB.Status.ToList();
+            lv.Insert(0, new Status { Id = 0, Name = "Все" });
+            StatusCB.ItemsSource = lv;
             StatusCB.DisplayMemberPath = "Name";
+            StatusCB.SelectedIndex = 0;
+
+            if(user.RoleId == 4)
+                provider = MainWindow.KKHDB.Providers.First(p => p.id_user == user.Id);
+
             if (provider == null)
             {
                 ShipmentsLV.ItemsSource = MainWindow.KKHDB.Shipments.ToList();
@@ -29,7 +36,8 @@ namespace KKHProject.Pages
                 AddBTN.Visibility = Visibility.Collapsed;
                 EditBTN.Visibility = Visibility.Collapsed;
             }
-            this.provider = provider;
+
+            this.user = user;
         }
 
         private void CityCB_SelectionChanged(object sender, SelectionChangedEventArgs e) => Update();
@@ -42,12 +50,12 @@ namespace KKHProject.Pages
             var lv = MainWindow.KKHDB.Shipments.Where(s => s.Provider.User.Name.Contains(SearchBOX.Text.Trim()) || SearchBOX.Text.Trim() == "")
                 .Where(s => s.id_status == sel.Id || sel.Id == 0)
                 .ToList();
-            ShipmentsLV.ItemsSource = provider != null ? lv.Where(s => s.id_provider == provider.Id) : lv;
+            ShipmentsLV.ItemsSource = provider != null ? lv.Where(s => s.id_provider == provider.Id || s.id_provider == null) : lv;
         }
 
         private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new AddShipmentPage(user, provider));
+            Navigation.NextPage(new AddShipmentPage(user));
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
@@ -58,7 +66,7 @@ namespace KKHProject.Pages
             }
             else
             {
-                Navigation.NextPage(new AddShipmentPage(user, provider, ShipmentsLV.SelectedItem as Shipment));
+                Navigation.NextPage(new AddShipmentPage(user, ShipmentsLV.SelectedItem as Shipment));
             }
         }
 

@@ -10,9 +10,10 @@ namespace KKHProject.Pages
     /// </summary>
     public partial class AddUserPage : Page
     {
+        private readonly AdminMain page;
         private User user;
 
-        public AddUserPage(User user = null)
+        public AddUserPage(AdminMain page, User user = null)
         {
             InitializeComponent();
 
@@ -31,12 +32,16 @@ namespace KKHProject.Pages
                 IsVisiblBtn.IsChecked = user.IsVisibal;
                 AddEditBTN.Content = "Редактировать";
                 this.user = user;
+                Title = "Редактировать";
             }
             else
             {
+                Title = "Добавить";
                 IsVisiblBtn.IsChecked = true;
                 AddEditBTN.Content = "Добавить";
             }
+
+            this.page = page;
         }
 
         private void AddEditBTN_Click(object sender, RoutedEventArgs e)
@@ -68,6 +73,7 @@ namespace KKHProject.Pages
             }
             MainWindow.KKHDB.SaveChanges();
             MessageBox.Show("Успешно", "Добавление");
+            page.Update();
             Navigation.BackPage();
         }
     }

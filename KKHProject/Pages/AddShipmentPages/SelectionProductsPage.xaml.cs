@@ -18,13 +18,13 @@ namespace KKHProject.Pages.AddShipmentPages
         private User user;
         private Provider provider;
 
-        public SelectionProductsPage(Frame frame, List<ShipmentObject> objects, Shipment shipment, User user, Provider provider = null)
+        public SelectionProductsPage(Frame frame, List<ShipmentObject> objects, Shipment shipment, User user)
         {
             InitializeComponent();
             this.frame = frame;
             this.objects = objects;
             this.shipment = shipment;
-
+            this.user = user;
             ClohtsLV.ItemsSource = MainWindow.KKHDB.Clohts.ToList();
             FutureLV.ItemsSource = MainWindow.KKHDB.Furnitures.ToList();
 
@@ -70,7 +70,7 @@ namespace KKHProject.Pages.AddShipmentPages
 
         private void NextBtn_Click(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new SelectWarehousePage(frame, objects, shipment, user, provider));
+            frame.Navigate(new SelectWarehousePage(frame, objects, shipment, user));
         }
 
         private void CancleBtn_Click(object sender, RoutedEventArgs e)

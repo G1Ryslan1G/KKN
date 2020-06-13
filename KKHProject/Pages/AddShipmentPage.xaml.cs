@@ -11,13 +11,13 @@ namespace KKHProject.Pages
     /// </summary>
     public partial class AddShipmentPage : Page
     {
-        public AddShipmentPage(User user, Provider provider = null, Shipment shipment = null)
+        public AddShipmentPage(User user, Shipment shipment = null)
         {
             InitializeComponent();
             List<ShipmentObject> list = new List<ShipmentObject>();
             if (shipment != null)
                 list = MainWindow.KKHDB.ShipmentObjects.Where(o => o.id_shipment == shipment.Id).ToList();
-            AddShipmentFrame.Navigate(new SelectionSupplierPage(AddShipmentFrame, list, user, provider, shipment));
+            AddShipmentFrame.Navigate(new SelectionSupplierPage(AddShipmentFrame, list, user, shipment));
         }
     }
 }

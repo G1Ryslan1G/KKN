@@ -9,7 +9,7 @@
       Title="AddWarehousesPage" FontSize="20">
 
     <Grid>
-        <ListView x:Name="WatLV" HorizontalAlignment="Left" Height="324" VerticalAlignment="Top" Width="343" Margin="10,43,0,0">
+        <ListView x:Name="WatLV" HorizontalAlignment="Left" Height="324" VerticalAlignment="Top" Width="375" Margin="10,43,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Ф.И.О." DisplayMemberBinding="{Binding Name}"/>
@@ -18,13 +18,13 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Height="23" Margin="572,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DescriptTB" HorizontalAlignment="Left" Height="148" Margin="377,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="315"/>
-        <ComboBox x:Name="CityCB" HorizontalAlignment="Left" Margin="572,89,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
+        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Height="29" Margin="544,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148"/>
+        <TextBox x:Name="DescriptTB" HorizontalAlignment="Left" Height="148" Margin="401,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="315"/>
+        <ComboBox x:Name="CityCB" HorizontalAlignment="Left" Margin="544,89,0,0" VerticalAlignment="Top" Width="148" Height="29"/>
         <Button x:Name="AddEditBTN" HorizontalAlignment="Left" Margin="653,385,0,0" VerticalAlignment="Top" Width="100" Click="AddEditBTN_Click" Height="27"/>
-        <Label Content="Телефон" HorizontalAlignment="Left" Margin="377,44,0,0" VerticalAlignment="Top"/>
-        <Label Content="Описание" HorizontalAlignment="Left" Margin="377,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.537,1.054"/>
-        <Label Content="Город" HorizontalAlignment="Left" Margin="377,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="401,44,0,0" VerticalAlignment="Top"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="401,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.537,1.054"/>
+        <Label Content="Город" HorizontalAlignment="Left" Margin="401,81,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

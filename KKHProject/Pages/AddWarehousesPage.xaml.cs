@@ -1,18 +1,7 @@
 ﻿using KKHProject.DataBase;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KKHProject.Pages
 {
@@ -21,9 +10,10 @@ namespace KKHProject.Pages
     /// </summary>
     public partial class AddWarehousesPage : Page
     {
+        private readonly WarehousesPage page;
         private readonly Warehouse warehouse;
 
-        public AddWarehousesPage(Warehouse warehouse = null)
+        public AddWarehousesPage(WarehousesPage page, Warehouse warehouse = null)
         {
             InitializeComponent();
             WatLV.ItemsSource = MainWindow.KKHDB.Users.Where(y => y.RoleId == 3).ToList();
@@ -34,13 +24,18 @@ namespace KKHProject.Pages
             {
                 WatLV.SelectedItem = warehouse.User;
                 CityCB.SelectedItem = warehouse.City;
+                PhoneTB.Text = warehouse.Phone;
+                DescriptTB.Text = warehouse.Description;
                 AddEditBTN.Content = "Редактировать";
+                Title = "Редактировать";
             }
             else
             {
+                Title = "Добавить";
                 AddEditBTN.Content = "Создать";
             }
 
+            this.page = page;
             this.warehouse = warehouse;
         }
 
@@ -52,8 +47,7 @@ namespace KKHProject.Pages
                 warehouse.Id_city = (CityCB.SelectedItem as City).Id;
                 warehouse.Phone = PhoneTB.Text;
                 warehouse.Description = DescriptTB.Text;
-                MainWindow.KKHDB.SaveChanges();
-                MessageBox.Show("Готово!");
+                MessageBox.Show("Успешно", "Редактирование");
             }
             else
             {
@@ -63,9 +57,13 @@ namespace KKHProject.Pages
                     Id_city = (CityCB.SelectedItem as City).Id,
                     Phone = PhoneTB.Text,
                     Description = DescriptTB.Text,
-
+                    VisibleStatus = true
                 });
+                MessageBox.Show("Успешно", "Добавление");
             }
+            MainWindow.KKHDB.SaveChanges();
+            page.Update();
+            Navigation.BackPage();
         }
     }
 }

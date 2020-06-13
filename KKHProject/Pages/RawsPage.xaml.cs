@@ -20,7 +20,8 @@ namespace KKHProject.Pages
             }
             else
             {
-
+                ClohtLV.ItemsSource = MainWindow.KKHDB.Clohts.Where(c => c.ObjectsContainers.Any(o => o.Container.id_warehouse == warehouse.Id)).ToArray();
+                FurnituresLV.ItemsSource = MainWindow.KKHDB.Furnitures.Where(f => f.ObjectsContainers.Any(o => o.Container.id_warehouse == warehouse.Id)).ToArray();
             }
         }
 

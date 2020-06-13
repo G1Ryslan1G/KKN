@@ -1,4 +1,5 @@
 ﻿using KKHProject.DataBase;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,13 +14,13 @@ namespace KKHProject.Pages
         public WarehousesPage(User user)
         {
             InitializeComponent();
-            WaterhosesLV.ItemsSource = MainWindow.KKHDB.Warehouses.Where(w=>w.VisibleStatus).ToList();
             if (user.RoleId != 2)
             {
                 AddBTN.Visibility = Visibility.Collapsed;
                 EditBTN.Visibility = Visibility.Collapsed;
                 DelBTN.Visibility = Visibility.Collapsed;
             }
+            Update();
         }
 
         private void OpenBTN_Click(object sender, RoutedEventArgs e)
@@ -36,7 +37,7 @@ namespace KKHProject.Pages
 
         private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new AddWarehousesPage());
+            Navigation.NextPage(new AddWarehousesPage(this));
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
@@ -47,7 +48,7 @@ namespace KKHProject.Pages
             }
             else
             {
-                Navigation.NextPage(new AddWarehousesPage(WaterhosesLV.SelectedItem as Warehouse));
+                Navigation.NextPage(new AddWarehousesPage(this, WaterhosesLV.SelectedItem as Warehouse));
             }
         }
 
@@ -74,6 +75,11 @@ namespace KKHProject.Pages
                 }
                 return;
             }
+        }
+
+        internal void Update()
+        {
+            WaterhosesLV.ItemsSource = MainWindow.KKHDB.Warehouses.Where(w => w.VisibleStatus).ToList();
         }
     }
 }

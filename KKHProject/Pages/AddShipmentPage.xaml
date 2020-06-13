@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:KKHProject.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddShipmentPage" FontSize="20">
+      Title="Поставка" FontSize="20">
 
     <Grid>
         <Frame x:Name="AddShipmentFrame" HorizontalAlignment="Left" Height="388" Margin="10,52,0,0" VerticalAlignment="Top" Width="780" NavigationUIVisibility="Hidden"/>

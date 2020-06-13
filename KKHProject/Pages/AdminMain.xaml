@@ -24,7 +24,7 @@
         </ListView>
         <Button x:Name="AddBTN" Content="Добавить" HorizontalAlignment="Left" Margin="14,398,0,0" VerticalAlignment="Top" Width="118" Click="AddBTN_Click" Height="42"/>
         <Button x:Name="EditBTN" Content="Редактировать" HorizontalAlignment="Left" Margin="150,398,0,0" VerticalAlignment="Top" Width="184" Click="EditBTN_Click" Height="42"/>
-        <Button x:Name="DelBTN" Content="Удалить" HorizontalAlignment="Left" Margin="354,398,0,0" VerticalAlignment="Top" Width="106" Click="DelBTN_Click" Height="42"/>
+        <Button x:Name="DelBTN" Content="Заблокировать" HorizontalAlignment="Left" Margin="354,398,0,0" VerticalAlignment="Top" Width="106" Click="DelBTN_Click" Height="42"/>
         <ComboBox x:Name="CityCB" HorizontalAlignment="Left" Margin="526,10,0,0" VerticalAlignment="Top" Width="195" SelectionChanged="CityCB_SelectionChanged"/>
         <Label Content="Город" HorizontalAlignment="Left" Margin="400,6,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="SearchBOX" HorizontalAlignment="Left" Height="30" Margin="112,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195" TextChanged="SearchBOX_TextChanged"/>

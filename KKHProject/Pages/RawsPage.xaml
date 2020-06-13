@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:KKHProject.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RawsPage" FontSize="20">
+      Title="Склад" FontSize="20">
 
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" VerticalAlignment="Top" Width="780">
@@ -24,8 +24,8 @@
                     </ListView>
                     <Button x:Name="ClohtAddBTN" Content="Добавить" HorizontalAlignment="Left" Margin="14,347,0,0" VerticalAlignment="Top" Width="111" Click="ClohtAddBTN_Click" Height="36"/>
                     <Button x:Name="ClohtEditBTN" Content="Редактировать" HorizontalAlignment="Left" Margin="141,347,0,0" VerticalAlignment="Top" Width="173" Click="ClohtEditBTN_Click" Height="36"/>
-                    <TextBox x:Name="ClohtSearchBOX" HorizontalAlignment="Left" Height="27" Margin="106,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" TextChanged="ClohtSearchBOX_TextChanged"/>
-                    <Label Content="Ф.И.О." HorizontalAlignment="Left" Margin="14,6,0,0" VerticalAlignment="Top" Height="32" Width="64"/>
+                    <TextBox x:Name="ClohtSearchBOX" HorizontalAlignment="Left" Height="27" Margin="180,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195" TextChanged="ClohtSearchBOX_TextChanged"/>
+                    <Label Content="Название ткани" HorizontalAlignment="Left" Margin="14,6,0,0" VerticalAlignment="Top" Height="32" Width="161"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Фурнитура">
@@ -42,8 +42,8 @@
                     </ListView>
                     <Button x:Name="FurnituresAddBTN" Content="Добавить" HorizontalAlignment="Left" Margin="14,347,0,0" VerticalAlignment="Top" Width="111" Click="FurnituresAddBTN_Click" Height="36"/>
                     <Button x:Name="FurnituresEditBTN" Content="Редактировать" HorizontalAlignment="Left" Margin="141,347,0,0" VerticalAlignment="Top" Width="173" Click="FurnituresEditBTN_Click" Height="36"/>
-                    <TextBox x:Name="FurnituresSearchBOX" HorizontalAlignment="Left" Height="27" Margin="106,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" TextChanged="FurnituresSearchBOX_TextChanged"/>
-                    <Label Content="Ф.И.О." HorizontalAlignment="Left" Margin="14,6,0,0" VerticalAlignment="Top" Height="32" Width="64"/>
+                    <TextBox x:Name="FurnituresSearchBOX" HorizontalAlignment="Left" Height="27" Margin="223,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" TextChanged="FurnituresSearchBOX_TextChanged"/>
+                    <Label Content="Название фурнитуры" HorizontalAlignment="Left" Margin="14,6,0,0" VerticalAlignment="Top" Height="39" Width="204"/>
                 </Grid>
             </TabItem>
         </TabControl>
