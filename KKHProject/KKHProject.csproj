@@ -141,7 +141,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OpenClohtPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OpenFurniturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ProviderMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProviderPostavkaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,8 +213,17 @@
     <Compile Include="Pages\DirectorMain.xaml.cs">
       <DependentUpon>DirectorMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OpenClohtPage.xaml.cs">
+      <DependentUpon>OpenClohtPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OpenFurniturePage.xaml.cs">
+      <DependentUpon>OpenFurniturePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProviderMain.xaml.cs">
       <DependentUpon>ProviderMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProviderPostavkaPage.xaml.cs">
+      <DependentUpon>ProviderPostavkaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RawsPage.xaml.cs">
       <DependentUpon>RawsPage.xaml</DependentUpon>

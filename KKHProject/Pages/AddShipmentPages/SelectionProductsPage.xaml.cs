@@ -34,30 +34,36 @@ namespace KKHProject.Pages.AddShipmentPages
 
         private void AddCloht_Click(object sender, RoutedEventArgs e)
         {
-            var sel = ClohtsLV.SelectedItem as Cloht;
-            objects.Add(new ShipmentObject
+            if (ClohtsLV.SelectedItem != null)
             {
-                id_cloht = sel.Id,
-                Cloht = sel,
-                CountCloht = Convert.ToInt32(countCloht.Text)
-            });
-            ObjectsLV.ItemsSource = null;
-            ObjectsLV.ItemsSource = objects;
-            countCloht.Text = "1";
+                var sel = ClohtsLV.SelectedItem as Cloht;
+                objects.Add(new ShipmentObject
+                {
+                    id_cloht = sel.Id,
+                    Cloht = sel,
+                    CountCloht = Convert.ToInt32(countCloht.Text)
+                });
+                ObjectsLV.ItemsSource = null;
+                ObjectsLV.ItemsSource = objects;
+                countCloht.Text = "1";
+            }
         }
 
         private void AddFuture_Click(object sender, RoutedEventArgs e)
         {
-            var sel = FutureLV.SelectedItem as Furniture;
-            objects.Add(new ShipmentObject
+            if (FutureLV.SelectedItem != null)
             {
-                id_furniture = sel.Id,
-                Furniture = sel,
-                CountFurniture = Convert.ToInt32(countFuture.Text)
-            });
-            ObjectsLV.ItemsSource = null;
-            ObjectsLV.ItemsSource = objects;
-            countFuture.Text = "1";
+                var sel = FutureLV.SelectedItem as Furniture;
+                objects.Add(new ShipmentObject
+                {
+                    id_furniture = sel.Id,
+                    Furniture = sel,
+                    CountFurniture = Convert.ToInt32(countFuture.Text)
+                });
+                ObjectsLV.ItemsSource = null;
+                ObjectsLV.ItemsSource = objects;
+                countFuture.Text = "1";
+            }
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)

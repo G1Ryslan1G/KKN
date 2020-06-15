@@ -9,7 +9,7 @@
       Title="SelectionProductsPage" FontSize="20">
 
     <Grid>
-        <ListView x:Name="ClohtsLV" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="320" Margin="10,22,0,0">
+        <ListView x:Name="ClohtsLV" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="320" Margin="10,28,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
@@ -19,7 +19,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="FutureLV" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="320" Margin="10,214,0,0">
+        <ListView x:Name="FutureLV" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="320" Margin="10,220,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
@@ -44,6 +44,10 @@
         <Button x:Name="AddFuture" Content="Добавить" FontSize="16" HorizontalAlignment="Left" Height="40" Margin="364,289,0,0" VerticalAlignment="Top" Width="81" Click="AddFuture_Click"/>
         <TextBox x:Name="countFuture" HorizontalAlignment="Left" Height="30" Margin="364,242,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="81"/>
         <Button x:Name="DeleteBtn" Content="Удалить" HorizontalAlignment="Left" Height="33" Margin="471,287,0,0" VerticalAlignment="Top" Width="290" Click="DeleteBtn_Click"/>
+        <Label Content="Список фурнитур" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top"/>
+        <Label Content="Список тканей" HorizontalAlignment="Left" Margin="10,-5,0,0" VerticalAlignment="Top"/>
+        <Label Content="Количество&#xD;&#xA; рулонов" HorizontalAlignment="Left" Margin="335,13,0,0" VerticalAlignment="Top"/>
+        <Label Content="Количество&#xA; фурнитуры" HorizontalAlignment="Left" Margin="335,174,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

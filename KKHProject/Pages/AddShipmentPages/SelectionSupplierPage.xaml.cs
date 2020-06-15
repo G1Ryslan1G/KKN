@@ -42,7 +42,9 @@ namespace KKHProject.Pages.AddShipmentPages
             {
                 Shipment = new Shipment();
             }
-            Shipment.id_provider = (ProvidersLV.SelectedItem as Provider).Id;
+
+            if(ProvidersLV.SelectedItem != null)
+                Shipment.id_provider = (ProvidersLV.SelectedItem as Provider).Id;
                     
             Frame.Navigate(new SelectionProductsPage(Frame, objects, Shipment, user));
         }

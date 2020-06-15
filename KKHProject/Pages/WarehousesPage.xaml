@@ -16,6 +16,7 @@
                     <GridViewColumn Header="Город" DisplayMemberBinding="{Binding City.Name}"/>
                     <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Phone}"/>
                     <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding VisibleStatus}"/>
                 </GridView>
             </ListView.View>
         </ListView>

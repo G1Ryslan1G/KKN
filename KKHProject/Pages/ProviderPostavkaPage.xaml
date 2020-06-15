@@ -1,0 +1,20 @@
+﻿<Page x:Class="KKHProject.Pages.ProviderPostavkaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KKHProject.Pages"
+      mc:Ignorable="d" FontSize="20"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Поставка">
+
+    <Grid>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="55,49,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AddresTx" Content="" HorizontalAlignment="Left" Margin="297,49,0,0" VerticalAlignment="Top" Width="186"/>
+        <Label Content="Дата создания заказа" HorizontalAlignment="Left" Margin="55,91,0,0" VerticalAlignment="Top"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="297,91,0,0" VerticalAlignment="Top" Width="186"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="55,292,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="148,292,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

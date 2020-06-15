@@ -67,7 +67,7 @@ namespace KKHProject.Pages
                     case MessageBoxResult.Yes:
                         warehouse.VisibleStatus = false;
                         MainWindow.KKHDB.SaveChanges();
-                        WaterhosesLV.ItemsSource = MainWindow.KKHDB.Warehouses.Where(h => h.VisibleStatus).ToList();
+                        WaterhosesLV.ItemsSource = MainWindow.KKHDB.Warehouses.ToList();
                         MessageBox.Show("Удалено!");
                         break;
                     case MessageBoxResult.No:
@@ -79,7 +79,7 @@ namespace KKHProject.Pages
 
         internal void Update()
         {
-            WaterhosesLV.ItemsSource = MainWindow.KKHDB.Warehouses.Where(w => w.VisibleStatus).ToList();
+            WaterhosesLV.ItemsSource = MainWindow.KKHDB.Warehouses.ToList();
         }
     }
 }

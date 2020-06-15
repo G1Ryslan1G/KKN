@@ -79,5 +79,32 @@ namespace KKHProject.Pages
 
             Update();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (ShipmentsLV.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите поставку", "Ошибка");
+            }
+            else
+            {
+                var sel = ShipmentsLV.SelectedItem as Shipment;
+                sel.id_status = 5;
+                Update();
+                MessageBox.Show("Готово!");
+            }
+        }
+
+        private void OpenBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (ShipmentsLV.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите поставку", "Ошибка");
+            }
+            else
+            {
+                Navigation.NextPage(new ProviderPostavkaPage(ShipmentsLV.SelectedItem as Shipment));
+            }
+        }
     }
 }

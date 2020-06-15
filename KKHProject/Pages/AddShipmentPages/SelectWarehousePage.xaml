@@ -9,13 +9,14 @@
       Title="SelectWarehousePage" FontSize="20">
 
     <Grid>
-        <ListView x:Name="WarehouseLV" HorizontalAlignment="Left" Height="314" VerticalAlignment="Top" Width="760" Margin="10,10,0,0">
+        <Label Margin="10,10,543,336"> Выберите склад</Label>
+        <ListView x:Name="WarehouseLV" HorizontalAlignment="Left" Height="275" VerticalAlignment="Top" Width="760" Margin="10,49,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Начальник" DisplayMemberBinding="{Binding User.Name}"/>
                     <GridViewColumn Header="Город" DisplayMemberBinding="{Binding City.Name}"/>
                     <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Phone}"/>
-                    <GridViewColumn Header="Дополнительно" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
         </ListView>
